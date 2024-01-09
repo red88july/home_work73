@@ -10,6 +10,6 @@ app.get('/Hello', (req, res) => {
     res.send('<h1>Hello!</h1>');
 });
 
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log(`Server is online on ${port}`);
 });
