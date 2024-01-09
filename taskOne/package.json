@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "taskOne": "nodemon task1.js",
-    "taskTwo": "nodemon task2.js"
+    "dev": "nodemon task1.js"
   },
   "keywords": [],
   "author": "",
