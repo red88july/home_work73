@@ -4,8 +4,8 @@ const port = 8000;
 
 const Vigenere = require('caesar-salad').Vigenere;
 
-const enCoddingWord = 'goods';
-const deCoddingWord = 'goodnight';
+const enCoddingKey = 'goods';
+const deCoddingKey = 'goodnight';
 
 
 app.get('/', (req, res) => {
@@ -18,13 +18,13 @@ app.get('/Hello', (req, res) => {
 
 app.get('/encode/:passEncode', (req, res) => {
     const encodingPassword = req.params.passEncode;
-    const encryptPass = Vigenere.Cipher(enCoddingWord).crypt(encodingPassword);
+    const encryptPass = Vigenere.Cipher(enCoddingKey).crypt(encodingPassword);
     res.send(encryptPass);
 });
 
 app.get('/decode/:passDeCode', (req, res) => {
     const decodingPassword = req.params.passDeCode;
-    const decryptionPassword = Vigenere.Decipher(deCoddingWord).crypt(decodingPassword);
+    const decryptionPassword = Vigenere.Decipher(deCoddingKey).crypt(decodingPassword);
     res.send(decryptionPassword);
 });
 
