@@ -1,10 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 8000;
+
 const Vigenere = require('caesar-salad').Vigenere;
 
 const enCoddingWord = 'goods';
 const deCoddingWord = 'goodnight';
+
+
+app.get('/', (req, res) => {
+    res.send('<h1>This is a default route </h1>' + `<h4>On this route can't find any content</h4>`);
+});
+
+app.get('/Hello', (req, res) => {
+    res.send('<h1>Hello!</h1>');
+});
 
 app.get('/encode/:passEncode', (req, res) => {
     const encodingPassword = req.params.passEncode;
@@ -20,4 +30,4 @@ app.get('/decode/:passDeCode', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is online on ${port}`);
-})
+});
